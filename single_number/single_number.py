@@ -8,12 +8,18 @@ output: integer [9]
 '''
 
 
-def single_number(arr):
+def single_number(ar):
 	# loop list
-	number = 0
-	for i in arr:
-		number ^= i
-	return number
+	# number = ar[0]
+	# for i in range(1, num):
+	# 	# xor of all elements
+	# 	number = number ^ar[i]
+	# # return number
+
+	# or think about python's set, it is iterable and has no duplicates
+	# this datastructure is a hashtable, as it is pointless to use list manipulation
+	# since the list is unordered, i.e 1 is coming before 0 and 5 and 4 are before 3.
+	return 2 * sum(set(ar)) - sum(ar)
 
 
 if __name__ == '__main__':

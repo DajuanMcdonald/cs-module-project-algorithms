@@ -28,13 +28,13 @@ def eating_cookies(n, cache):
     else:
         # otherwise x ways = consumption on demand
         ways_to_consume = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
-        # reset the cache
+        # reset cache
         cache[n] = ways_to_consume
-        #return x ways
+    #return x ways
     return ways_to_consume
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
     num_cookies = 5
-
-    print(f"There are {eating_cookies(num_cookies)} ways for Cookie Monster to each {num_cookies} cookies")
+    # list comprehension for i in range
+    print(f"There are {eating_cookies(num_cookies, [0 for i in range(num_cookies+1)])} ways for Cookie Monster to each {num_cookies} cookies")
